@@ -1,0 +1,157 @@
+# Copyright (C) 2025 WPDrops
+# This file is distributed under the GPL2.
+msgid ""
+msgstr ""
+"Project-Id-Version: InterceptAccordion 1.0.0\n"
+"Report-Msgid-Bugs-To: "
+"https://wordpress.org/support/plugin/interceptaccordian\n"
+"POT-Creation-Date: 2025-05-06 08:10:58+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2025-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Country: United States\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
+"attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-Bookmarks: \n"
+"X-Textdomain-Support: yes\n"
+"X-Generator: grunt-wp-i18n 1.0.3\n"
+
+#: includes/modules/CustomAccordian/CustomAccordian.php:15
+msgid "WPD Custom Accordion"
+msgstr ""
+
+#: includes/modules/CustomAccordian/CustomAccordian.php:23
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:37
+msgid "Icon"
+msgstr ""
+
+#: includes/modules/CustomAccordian/CustomAccordian.php:24
+msgid "Image"
+msgstr ""
+
+#: includes/modules/CustomAccordian/CustomAccordian.php:25
+msgid "Title"
+msgstr ""
+
+#: includes/modules/CustomAccordian/CustomAccordian.php:26
+msgid "Description"
+msgstr ""
+
+#: includes/modules/CustomAccordian/CustomAccordian.php:36
+msgid "Title Color"
+msgstr ""
+
+#: includes/modules/CustomAccordian/CustomAccordian.php:45
+msgid "Title Font Size"
+msgstr ""
+
+#: includes/modules/CustomAccordian/CustomAccordian.php:63
+msgid "Icon Color"
+msgstr ""
+
+#: includes/modules/CustomAccordian/CustomAccordian.php:71
+msgid "Content Color"
+msgstr ""
+
+#: includes/modules/CustomAccordian/CustomAccordian.php:80
+msgid "Content Font Size"
+msgstr ""
+
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:5
+msgid "Wpd Custom Accordion Item"
+msgstr ""
+
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:15
+msgid "Content"
+msgstr ""
+
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:25
+msgid "Accordian Title"
+msgstr ""
+
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:27
+msgid "This is title for each accordian."
+msgstr ""
+
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:31
+msgid "Accordian Content"
+msgstr ""
+
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:33
+msgid "This is contents for each accordian."
+msgstr ""
+
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:46
+msgid "Choose an Image"
+msgstr ""
+
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:47
+msgid "Upload an Image"
+msgstr ""
+
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:56
+msgid "Show Small Text"
+msgstr ""
+
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:59
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:77
+msgid "No"
+msgstr ""
+
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:60
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:78
+msgid "Yes"
+msgstr ""
+
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:65
+msgid "Accordian Small Text"
+msgstr ""
+
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:67
+msgid "This field is for small text."
+msgstr ""
+
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:74
+msgid "Show Read More"
+msgstr ""
+
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:83
+msgid "Read More Text"
+msgstr ""
+
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:85
+msgid "This Field is For Read More Text."
+msgstr ""
+
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:92
+msgid "Read More Link"
+msgstr ""
+
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:94
+msgid "This Field is For Read More Link."
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "InterceptAccordion"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Custom Plugin For Divi Accordian"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "WPDrops"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://www.wpdrops.com"
+msgstr ""

@@ -1,3 +1,3 @@
-import HelloWorld from './HelloWorld/HelloWorld';
+import WPD_CustomAccordion from './CustomAccordian/CustomAccordian';
 
-export default [HelloWorld];
+export default [WPD_CustomAccordion];
