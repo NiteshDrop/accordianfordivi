@@ -10,7 +10,7 @@ jQuery(document).ready(function ($) {
       const $item = $(this);
       const $title = $item.find(".wpd-accordion-title");
       const $content = $item.find(".wpd-accordion-description");
-      const $img = $item.find(".img");
+      const $img = $item.find(".wpd-accordion-img");
 
       // Set initial active item's content and image
       if ($item.hasClass("active")) {
@@ -31,7 +31,7 @@ jQuery(document).ready(function ($) {
         $items.each(function () {
           const $el = $(this);
           const $elContent = $el.find(".wpd-accordion-description");
-          const $elImg = $el.find(".img");
+          const $elImg = $el.find(".wpd-accordion-img");
           $el.removeClass("active");
           $elContent.css("maxHeight", 0);
           $elImg.hide();

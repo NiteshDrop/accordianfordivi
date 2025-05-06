@@ -12,7 +12,7 @@ class Wpd_Custom_Accordian extends ET_Builder_Module {
 		$this->slug             = 'wca_accordian';
 		$this->child_slug       = 'wca_accordian_item';
 		$this->vb_support       = 'on';
-		$this->name             = esc_html__( 'WPD Custom Accordion', 'wca-customaccordian' );
+		$this->name             = esc_html__( 'Intercept Accordion', 'wca-customaccordian' );
 		$this->main_css_element = '%%order_class%%';
 	}
 
@@ -24,6 +24,8 @@ class Wpd_Custom_Accordian extends ET_Builder_Module {
 					'image'      => esc_html__( 'Image', 'wca-customaccordian' ),
 					'title'      => esc_html__( 'Title', 'wca-customaccordian' ),
 					'description'       => esc_html__( 'Description', 'wca-customaccordian' ),
+					'othertext'       => esc_html__( 'Other Text', 'wca-customaccordian' ),
+					'button'       => esc_html__( 'Button', 'wca-customaccordian' ),
 				),
 			),
 		);
@@ -112,6 +114,60 @@ class Wpd_Custom_Accordian extends ET_Builder_Module {
 			'toggle_slug'      => 'description',
 		);
 
+		$fields['smalltext_color'] = array(
+			'label'          => esc_html__( 'Other Text Color', 'wca-customaccordian' ),
+			'type'           => 'color-alpha',
+			'tab_slug'       => 'advanced',
+			'default'				 => '#333',
+			'mobile_options' => true,
+			'toggle_slug'    => 'othertext',
+		);
+
+		$fields['smalltext_font_size'] = array(
+			'label'            => esc_html__( 'Other Text Font Size', 'wca-customaccordian' ),
+			'type'             => 'range',
+			'default'          => '12px',
+			'default_unit'     => 'px',
+			'default_on_front' => '12px',
+			'allowed_units'    => array( 'em', 'rem', 'px', 'pt' ),
+			'range_settings'   => array(
+				'min'  => '1',
+				'max'  => '150',
+				'step' => '1',
+			),
+			'validate_unit'    => true,
+			'mobile_options'   => true,
+			'tab_slug'         => 'advanced',
+			'toggle_slug'      => 'othertext',
+		);
+		
+		$fields['button_color'] = array(
+			'label'          => esc_html__( 'Button Color', 'wca-customaccordian' ),
+			'type'           => 'color-alpha',
+			'tab_slug'       => 'advanced',
+			'default'				 => '#006e96',
+			'mobile_options' => true,
+			'toggle_slug'    => 'button',
+		);
+
+		$fields['button_font_size'] = array(
+			'label'            => esc_html__( 'Button Font Size', 'wca-customaccordian' ),
+			'type'             => 'range',
+			'default'          => '18px',
+			'default_unit'     => 'px',
+			'default_on_front' => '18px',
+			'allowed_units'    => array( 'em', 'rem', 'px', 'pt' ),
+			'range_settings'   => array(
+				'min'  => '1',
+				'max'  => '150',
+				'step' => '1',
+			),
+			'validate_unit'    => true,
+			'mobile_options'   => true,
+			'tab_slug'         => 'advanced',
+			'toggle_slug'      => 'button',
+		);
+
 		return $fields;
 	}
 
@@ -122,6 +178,10 @@ class Wpd_Custom_Accordian extends ET_Builder_Module {
 		$icon_font_size = $this->props['icon_font_size'];
 		$content_font_size = $this->props['content_font_size'];
 		$content_color = $this->props['content_color'];
+		$button_color = $this->props['button_color'];
+		$button_font_size = $this->props['button_font_size'];
+		$smalltext_color = $this->props['smalltext_color'];
+		$smalltext_font_size = $this->props['smalltext_font_size'];
 
 
 		ET_Builder_Element::set_style(
@@ -176,6 +236,54 @@ class Wpd_Custom_Accordian extends ET_Builder_Module {
 			array(
 				'selector'    => '%%order_class%% .wpd-accordion-description p',
 				'declaration' => "font-size: {$content_font_size};",
+			)
+		);
+
+		ET_Builder_Element::set_style(
+			$render_slug,
+			array(
+				'selector'    => '%%order_class%% .wpd-readmore-icon',
+				'declaration' => "color: {$button_color};",
+			)
+		);
+
+		ET_Builder_Element::set_style(
+			$render_slug,
+			array(
+				'selector'    => '%%order_class%% .wpd-readmore-icon',
+				'declaration' => "font-size: {$button_font_size};",
+			)
+		);
+
+		ET_Builder_Element::set_style(
+			$render_slug,
+			array(
+				'selector'    => '%%order_class%% .wpd-accordion-button',
+				'declaration' => "color: {$button_color};",
+			)
+		);
+
+		ET_Builder_Element::set_style(
+			$render_slug,
+			array(
+				'selector'    => '%%order_class%% .wpd-accordion-button',
+				'declaration' => "font-size: {$button_font_size};",
+			)
+		);
+
+		ET_Builder_Element::set_style(
+			$render_slug,
+			array(
+				'selector'    => '%%order_class%% .wpd-small-text',
+				'declaration' => "color: {$smalltext_color};",
+			)
+		);
+
+		ET_Builder_Element::set_style(
+			$render_slug,
+			array(
+				'selector'    => '%%order_class%% .wpd-small-text',
+				'declaration' => "font-size: {$smalltext_font_size};",
 			)
 		);
 	}

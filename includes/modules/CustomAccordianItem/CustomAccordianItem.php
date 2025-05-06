@@ -2,7 +2,7 @@
 
 class Wpd_Accordian_Item extends ET_Builder_Module {
 	public function init() {
-		$this->name                     = esc_html__( 'Wpd Custom Accordion Item', 'wca-customaccordian' );
+		$this->name                     = esc_html__( 'Intercept Accordion Item', 'wca-customaccordian' );
 		$this->slug                     = 'wca_accordian_item';
 		$this->vb_support               = 'on';
 		$this->type                     = 'child';
@@ -46,7 +46,7 @@ class Wpd_Accordian_Item extends ET_Builder_Module {
 		$fields['accordion_icon'] = array(
 			'label'       => esc_html__( 'Icon', 'wca-customaccordian' ),
 			'type'        => 'select_icon',
-			'class'       => array( 'et-pb-font-icon' ),
+			'class'       => array( 'et-pb-icon et-pb-font-icon' ),
 			'show_if'          => array(
 				'image_icon' => 'off',
 			),
@@ -126,40 +126,45 @@ class Wpd_Accordian_Item extends ET_Builder_Module {
 			),
 		);
 
+		$fields['accordion_link_icon'] = array(
+			'label'       => esc_html__( 'Read More Icon', 'wca-customaccordian' ),
+			'type'        => 'select_icon',
+			'class'       => array( 'et-pb-icon et-pb-font-icon' ),
+			'show_if'          => array(
+				'show_accordian_link' => 'on',
+			),
+		);
+
 		return $fields;
 	}
 
 	public function render( $attrs, $render_slug, $content = null ) {
 		$multi_view		= et_pb_multi_view_options( $this );
-		// Process icon
 
 		$accordion_icon_image = $this->props['image_icon'];
 		$accordion_icon = isset($this->props['accordion_icon']) ? et_pb_process_font_icon($this->props['accordion_icon']) : '';
+		$accordion_link_icon = isset($this->props['accordion_link_icon']) ? et_pb_process_font_icon($this->props['accordion_link_icon']) : '';
 		$icon_image = esc_url($this->props['accordion_icon_image']);
 
 		// Process image - safely handle the image URL
 		$accordion_image = '';
+		$image_caption = '';
 		if (!empty($this->props['accordion_image'])) {
 			$accordion_image = esc_url($this->props['accordion_image']);
+			if($accordion_image) {
+				$attachment_id	= attachment_url_to_postid( $accordion_image );
+				if($attachment_id) {
+					$image_caption = wp_get_attachment_caption( $attachment_id );
+				}
+			}
 		}
 		
 		// Get content and title, ensuring they are not objects
 		$accordion_title = isset($this->props['accordian_title']) ? esc_html($this->props['accordian_title']) : 'your Title Goes here';
 		$accordion_content = isset($this->props['accordian_content']) ? $this->props['accordian_content'] : 'This is content area.';
+		$accordian_small_text = isset($this->props['accordian_small_text']) ? $this->props['accordian_small_text'] : 'This is small text.';
 		$accordion_link = isset($this->props['accordian_link']) ? $this->props['accordian_link'] : '';
 		$accordion_link_text = isset($this->props['accordian_link_text']) ? $this->props['accordian_link_text'] : 'Read More';
-
-		$read_more = $multi_view->render_element(
-			array(
-				'tag'      => 'a',
-				'content'  => '{{accordian_link_text}}',
-				'attrs'    => array(
-					'class' => 'wpd-accordion-button',
-					'href'	=> '{{accordian_link}}'
-				),
-				'required' => 'accordian_link_text',
-			)
-		);
 
 		$accordion_icon_render = $multi_view->render_element(
 			array(
@@ -175,22 +180,26 @@ class Wpd_Accordian_Item extends ET_Builder_Module {
 		$output = sprintf(
 			'<div class="wpd_accordian_contents">
 				<h3 class="wpd-accordion-title">
-					%4$s%1$s
+					%1$s%2$s
 				</h3>
 				<div class="wpd-accordion-description">
-					%2$s
+					%3$s
+					<span class="wpd-small-text">%4$s</span>
 					%5$s
 				</div>
 			</div>
-			<div class="img">
-				<img src="%3$s" alt="img1" />
+			<div class="wpd-accordion-img">
+				<img src="%6$s" alt="img1" />
+				<span>%7$s</span>
 			</div>
 			',
+			($accordion_icon_image == "on") ? '<img src="'.$icon_image.'" />' : sprintf('%s', $accordion_icon_render),
 			$accordion_title,
 			$accordion_content,
+			$accordian_small_text,
+			($accordion_link_text) ? sprintf('<a class="wpd-accordion-button" href="%1$s"> %2$s <span class="et-pb-icon et-pb-font-icon wpd-readmore-icon">&#x24;</span></a>', $accordion_link, $accordion_link_text ) : "",
 			$accordion_image,
-			($accordion_icon_image == "on") ? '<img src="'.$icon_image.'" />' : sprintf('%s', $accordion_icon_render),
-			$read_more,
+			$image_caption
 		);
 
 		return $output;

@@ -3,6 +3,31 @@
   margin: 20px 0;
 }
 
+
+.wpd-accordion h1,
+.wpd-accordion h2,
+.wpd-accordion h3,
+.wpd-accordion h4,
+.wpd-accordion h5,
+.wpd-accordion h6,
+.wca-accordian h1,
+.wca-accordian h2,
+.wca-accordian h3,
+.wca-accordian h4,
+.wca-accordian h5,
+.wca-accordian h6 {
+	margin: 0;
+	padding: 0;
+}
+
+.wca-accordian p,
+.wpd-accordion p,
+.wca-accordian p a,
+.wpd-accordion p a {
+	text-decoration: none !important;
+	padding: 0 !important;
+}
+
 .wca_accordian_item,
 .wca_accordian_item .et_pb_module_inner {
 	position: absolute !important;
@@ -12,8 +37,13 @@
 .wpd_accordian_contents {
 	width: 50%;
 	border-bottom: 1px solid #ddd;
-	padding: 10px 0;
+	padding: 20px 0;
 	cursor: pointer;
+}
+
+.wca_accordian_item:last-child .wpd_accordian_contents,
+.wpd_accordian_contents:last-child {
+	border-bottom: none;
 }
 
 .wpd-accordion-title {
@@ -36,12 +66,11 @@
   cursor: auto;
 }
 
-.wpd-accordion-description p {
-	padding-bottom: 0;
+.wpd-small-text {
+	display: block;
 }
 
-.img {
-  border-radius: 8px;
+.wpd-accordion-img {
   overflow: hidden;
   position: absolute;
   top: 0;
@@ -50,20 +79,19 @@
   height: 100%;
 }
 
-.wca_accordian_item .img img {
-  width: 100%;
-  height: 100%;
+.wpd-accordion-img img {
+	border-radius: 8px;
   object-fit: cover;
   object-position: center;
 }
 
-.wpd-accordion-item .img {
+.wpd-accordion-item .wpd-accordion-img {
 	opacity: 0;
 	transition: all ease-in-out 1s;
 }
 
-.wca_accordian_item.active .img,
-.wpd-accordion-item.active .img {
+.wca_accordian_item.active .wpd-accordion-img,
+.wpd-accordion-item.active .wpd-accordion-img {
   animation: fadeIn 1.5s ease-in-out;
 	opacity: 1;
 	transition: all ease-in-out 1s;
@@ -72,22 +100,20 @@
 @keyframes fadeIn {
   from {
     opacity: 0;
-    /* transform: translateY(-20%); */
   }
   to {
     opacity: 1;
-    /* transform: translateY(0); */
   }
 }
 
 @media (max-width: 768px) {
-  .img {
+  .wpd-accordion-img {
     position: static;
     width: 100%;
     /* height: auto; */
     margin-top: 20px;
   }
-  .wca_accordian_item {
+  .wpd_accordian_contents {
     width: 100%;
   }
 }
@@ -105,23 +131,5 @@
   overflow: hidden;
   position: relative;
   transition: all 0.3s ease-in-out;
-}
-
-.wpd-accordion-button::after{
-  content: "";
-  width: 20%;
-  height: 2px;
-  background-color: #000;
-  position: absolute;
-  bottom: 0;
-  transition: all 0.3s ease-in-out;
-}
-
-.wpd-accordion-button:hover {
-	color: #d23b26;
-}
-
-.wpd-accordion-button:hover::after{
-  width: 100%;
-  background-color: #d23b26;
+	font-weight: 600;
 }
