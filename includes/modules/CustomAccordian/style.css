@@ -1,3 +1,8 @@
+.wpd-accordion {
+  width: 100%;
+  margin: 20px 0;
+}
+
 .wca_accordian_item,
 .wca_accordian_item .et_pb_module_inner {
 	position: absolute !important;
@@ -20,7 +25,7 @@
 }
 
 .wpd-accordion-title span {
-	font-size: 20px;
+	overflow: hidden;
 }
 
 .wpd-accordion-description {
@@ -45,15 +50,23 @@
   height: 100%;
 }
 
-.img img {
+.wca_accordian_item .img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
 }
 
-.wca_accordian_item.active .img {
+.wpd-accordion-item .img {
+	opacity: 0;
+	transition: all ease-in-out 1s;
+}
+
+.wca_accordian_item.active .img,
+.wpd-accordion-item.active .img {
   animation: fadeIn 1.5s ease-in-out;
+	opacity: 1;
+	transition: all ease-in-out 1s;
 }
 
 @keyframes fadeIn {

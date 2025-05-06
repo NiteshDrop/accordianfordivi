@@ -32,7 +32,7 @@ class Wpd_Custom_Accordian extends ET_Builder_Module {
 	public function get_fields() {
 		$fields = array();
 
-		$fields['wpd_title_color'] = array(
+		$fields['title_color'] = array(
 			'label'          => esc_html__( 'Title Color', 'wca-customaccordian' ),
 			'type'           => 'color-alpha',
 			'tab_slug'       => 'advanced',
@@ -41,7 +41,7 @@ class Wpd_Custom_Accordian extends ET_Builder_Module {
 			'toggle_slug'    => 'title',
 		);
 
-		$fields['wpd_title_font_size'] = array(
+		$fields['title_font_size'] = array(
 			'label'            => esc_html__( 'Title Font Size', 'wca-customaccordian' ),
 			'type'             => 'range',
 			'default'          => '28px',
@@ -59,7 +59,7 @@ class Wpd_Custom_Accordian extends ET_Builder_Module {
 			'toggle_slug'      => 'title',
 		);
 
-		$fields['wpd_icon_color'] = array(
+		$fields['icon_color'] = array(
 			'label'          => esc_html__( 'Icon Color', 'wca-customaccordian' ),
 			'type'           => 'color-alpha',
 			'tab_slug'       => 'advanced',
@@ -67,7 +67,25 @@ class Wpd_Custom_Accordian extends ET_Builder_Module {
 			'toggle_slug'    => 'icon',
 		);
 
-		$fields['wpd_content_color'] = array(
+		$fields['icon_font_size'] = array(
+			'label'            => esc_html__( 'Icon Font Size', 'wca-customaccordian' ),
+			'type'             => 'range',
+			'default'          => '22px',
+			'default_unit'     => 'px',
+			'default_on_front' => '22px',
+			'allowed_units'    => array( 'em', 'rem', 'px', 'pt' ),
+			'range_settings'   => array(
+				'min'  => '1',
+				'max'  => '150',
+				'step' => '1',
+			),
+			'validate_unit'    => true,
+			'mobile_options'   => true,
+			'tab_slug'         => 'advanced',
+			'toggle_slug'      => 'icon',
+		);
+
+		$fields['content_color'] = array(
 			'label'          => esc_html__( 'Content Color', 'wca-customaccordian' ),
 			'type'           => 'color-alpha',
 			'tab_slug'       => 'advanced',
@@ -76,7 +94,7 @@ class Wpd_Custom_Accordian extends ET_Builder_Module {
 			'toggle_slug'    => 'description',
 		);
 
-		$fields['wpd_desc_font_size'] = array(
+		$fields['content_font_size'] = array(
 			'label'            => esc_html__( 'Content Font Size', 'wca-customaccordian' ),
 			'type'             => 'range',
 			'default'          => '16px',
@@ -98,16 +116,19 @@ class Wpd_Custom_Accordian extends ET_Builder_Module {
 	}
 
 	public function apply_css($render_slug) {
-		$wpd_title_color = $this->props['wpd_title_color'];
-		$wpd_title_font_size = $this->props['wpd_title_font_size'];
-		$wpd_desc_font_size = $this->props['wpd_desc_font_size'];
+		$title_color = $this->props['title_color'];
+		$title_font_size = $this->props['title_font_size'];
+		$icon_color = $this->props['icon_color'];
+		$icon_font_size = $this->props['icon_font_size'];
+		$content_font_size = $this->props['content_font_size'];
+		$content_color = $this->props['content_color'];
 
 
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
 				'selector'    => '%%order_class%% .wpd-accordion-title',
-				'declaration' => "color: {$wpd_title_color};",
+				'declaration' => "color: {$title_color};",
 			)
 		);
 
@@ -115,7 +136,38 @@ class Wpd_Custom_Accordian extends ET_Builder_Module {
 			$render_slug,
 			array(
 				'selector'    => '%%order_class%% .wpd-accordion-title',
-				'declaration' => "font-size: {$wpd_title_font_size};",
+				'declaration' => "font-size: {$title_font_size};",
+			)
+		);
+
+		ET_Builder_Element::set_style(
+			$render_slug,
+			array(
+				'selector'    => '%%order_class%% .wpd-accordion-title span.et-pb-icon',
+				'declaration' => "color: {$icon_color};",
+			)
+		);
+
+		ET_Builder_Element::set_style(
+			$render_slug,
+			array(
+				'selector'    => '%%order_class%% .wpd-accordion-title span',
+				'declaration' => "
+					font-size: {$icon_font_size};
+					height: {$icon_font_size};
+					width: {$icon_font_size};
+				",
+			)
+		);
+
+		ET_Builder_Element::set_style(
+			$render_slug,
+			array(
+				'selector'    => '%%order_class%% .wpd-accordion-title img',
+				'declaration' => "
+					height: {$icon_font_size};
+					width: {$icon_font_size};
+				",
 			)
 		);
 
@@ -123,7 +175,7 @@ class Wpd_Custom_Accordian extends ET_Builder_Module {
 			$render_slug,
 			array(
 				'selector'    => '%%order_class%% .wpd-accordion-description p',
-				'declaration' => "font-size: {$wpd_desc_font_size};",
+				'declaration' => "font-size: {$content_font_size};",
 			)
 		);
 	}
