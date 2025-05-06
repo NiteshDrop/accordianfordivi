@@ -4,8 +4,8 @@ Plugin Name: InterceptAccordion
 Plugin URI:  
 Description: Custom Plugin For Divi Accordian
 Version:     1.0.0
-Author:      WPDrops
-Author URI:  https://www.wpdrops.com
+Author:      Intercept
+Author URI:  #
 License:     GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: iba-interceptaccordian

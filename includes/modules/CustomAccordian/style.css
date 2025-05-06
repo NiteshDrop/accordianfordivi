@@ -52,6 +52,7 @@
   align-items: center;
   justify-content: flex-start;
   gap: 20px;
+	padding-bottom: 0;
 }
 
 .wpd-accordion-title span {
@@ -132,4 +133,5 @@
   position: relative;
   transition: all 0.3s ease-in-out;
 	font-weight: 600;
+	text-decoration: none !important;
 }

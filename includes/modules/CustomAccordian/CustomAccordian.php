@@ -4,8 +4,8 @@ class Wpd_Custom_Accordian extends ET_Builder_Module {
 
 	protected $module_credits = array(
 		'module_uri' => '',
-		'author'     => 'WPDrops',
-		'author_uri' => 'wpdrops.com',
+		'author'     => 'Intercept',
+		'author_uri' => '#',
 	);
 
 	public function init() {
@@ -288,9 +288,6 @@ class Wpd_Custom_Accordian extends ET_Builder_Module {
 
 	public function render( $attrs, $content, $render_slug ) {
 		$this->apply_css( $render_slug );
-		wp_enqueue_style( 'wpd-accordion-style', plugin_dir_url( __DIR__ ) . 'CustomAccordian/style.css' );
-		wp_enqueue_script( 'wpd-accordion-style' );
-		wp_enqueue_script( 'wpd-accordion-script', plugin_dir_url( __DIR__ ) . 'CustomAccordian/frontend.min.js', array(), '', true);
 
 		return sprintf(
 			'%1$s',
