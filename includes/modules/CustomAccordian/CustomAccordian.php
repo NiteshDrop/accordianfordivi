@@ -214,8 +214,6 @@ class Wpd_Custom_Accordian extends ET_Builder_Module {
 				'selector'    => '%%order_class%% .wpd-accordion-title span',
 				'declaration' => "
 					font-size: {$icon_font_size};
-					height: {$icon_font_size};
-					width: {$icon_font_size};
 				",
 			)
 		);

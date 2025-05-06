@@ -166,17 +166,6 @@ class Wpd_Accordian_Item extends ET_Builder_Module {
 		$accordion_link = isset($this->props['accordian_link']) ? $this->props['accordian_link'] : '';
 		$accordion_link_text = isset($this->props['accordian_link_text']) ? $this->props['accordian_link_text'] : 'Read More';
 
-		$accordion_icon_render = $multi_view->render_element(
-			array(
-				'tag'      => 'span',
-				'content'  => '{{accordion_icon}}',
-				'attrs'    => array(
-					'class' => 'et-pb-icon et-pb-font-icon'
-				),
-				'required' => 'accordion_icon',
-			)
-		);
-
 		$output = sprintf(
 			'<div class="wpd_accordian_contents">
 				<h3 class="wpd-accordion-title">
@@ -193,11 +182,11 @@ class Wpd_Accordian_Item extends ET_Builder_Module {
 				<span>%7$s</span>
 			</div>
 			',
-			($accordion_icon_image == "on") ? '<img src="'.$icon_image.'" />' : sprintf('%s', $accordion_icon_render),
+			($accordion_icon_image == "on") ? '<img src="'.$icon_image.'" />' : sprintf('<span class="et-pb-icon et-pb-font-icon wpd-readmore-icon">%1$s</span>', $accordion_icon),
 			$accordion_title,
 			$accordion_content,
 			$accordian_small_text,
-			($accordion_link_text) ? sprintf('<a class="wpd-accordion-button" href="%1$s"> %2$s <span class="et-pb-icon et-pb-font-icon wpd-readmore-icon">&#x24;</span></a>', $accordion_link, $accordion_link_text ) : "",
+			($accordion_link_text) ? sprintf('<a class="wpd-accordion-button" href="%1$s"> %2$s <span class="et-pb-icon et-pb-font-icon wpd-readmore-icon">%3$s</span></a>', $accordion_link, $accordion_link_text,$accordion_link_icon ) : "",
 			$accordion_image,
 			$image_caption
 		);
