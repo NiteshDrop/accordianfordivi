@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: InterceptAccordion 1.0.0\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/interceptaccordian\n"
-"POT-Creation-Date: 2025-05-06 18:23:03+00:00\n"
+"POT-Creation-Date: 2025-05-07 09:32:08+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -30,28 +30,34 @@ msgid "Intercept Accordion"
 msgstr ""
 
 #: includes/modules/CustomAccordian/CustomAccordian.php:23
-#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:47
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:16
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:55
 msgid "Icon"
 msgstr ""
 
 #: includes/modules/CustomAccordian/CustomAccordian.php:24
-#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:72
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:17
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:82
 msgid "Image"
 msgstr ""
 
 #: includes/modules/CustomAccordian/CustomAccordian.php:25
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:15
 msgid "Title"
 msgstr ""
 
 #: includes/modules/CustomAccordian/CustomAccordian.php:26
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:18
 msgid "Description"
 msgstr ""
 
 #: includes/modules/CustomAccordian/CustomAccordian.php:27
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:19
 msgid "Other Text"
 msgstr ""
 
 #: includes/modules/CustomAccordian/CustomAccordian.php:28
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:20
 msgid "Button"
 msgstr ""
 
@@ -99,89 +105,85 @@ msgstr ""
 msgid "Intercept Accordion Item"
 msgstr ""
 
-#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:15
-msgid "Content"
-msgstr ""
-
-#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:25
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:30
 msgid "Accordian Title"
 msgstr ""
 
-#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:27
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:32
 msgid "This is title for each accordian."
 msgstr ""
 
-#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:31
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:37
 msgid "Accordian Content"
 msgstr ""
 
-#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:33
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:39
 msgid "This is contents for each accordian."
 msgstr ""
 
-#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:37
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:44
 msgid "Image Icon"
 msgstr ""
 
-#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:40
-#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:88
-#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:106
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:47
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:99
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:119
 msgid "No"
 msgstr ""
 
-#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:41
-#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:89
-#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:107
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:48
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:100
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:120
 msgid "Yes"
 msgstr ""
 
-#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:58
-#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:75
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:67
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:85
 msgid "Choose an Image"
 msgstr ""
 
-#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:59
-#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:76
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:68
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:86
 msgid "Upload an Image"
 msgstr ""
 
-#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:60
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:69
 msgid "This field is for icon."
 msgstr ""
 
-#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:85
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:96
 msgid "Show Small Text"
 msgstr ""
 
-#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:94
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:106
 msgid "Accordian Small Text"
 msgstr ""
 
-#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:96
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:108
 msgid "This field is for small text."
 msgstr ""
 
-#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:103
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:116
 msgid "Show Read More"
 msgstr ""
 
-#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:112
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:126
 msgid "Read More Text"
 msgstr ""
 
-#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:114
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:128
 msgid "This Field is For Read More Text."
 msgstr ""
 
-#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:121
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:136
 msgid "Read More Link"
 msgstr ""
 
-#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:123
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:138
 msgid "This Field is For Read More Link."
 msgstr ""
 
-#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:130
+#: includes/modules/CustomAccordianItem/CustomAccordianItem.php:146
 msgid "Read More Icon"
 msgstr ""
 

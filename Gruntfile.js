@@ -1,0 +1,1 @@
+C:/xampp/htdocs/interceptblood/wp-content/plugins/interceptaccordian/node_modules/divi-scripts/config/Gruntfile.js

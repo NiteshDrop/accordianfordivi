@@ -109,24 +109,27 @@ class WPD_CustomAccordion extends Component {
 							key={`accordion-item-${i}`}
 							className={`wpd-accordion-item ${activeIndex === i ? 'active' : ''}`}
 						>
-							<h3
-								className="wpd-accordion-title"
-								onClick={() => this.toggleAccordion(i)}
-								style={{color:title_color, fontSize: title_font_size}}
-							>
-								{item.image_icon === 'on' ? (
-									<img className="wpd-accordion-image" src={item.icon_image} alt={item.title} style={{height: icon_font_size, width: icon_font_size}} />
-								) : (
-									item.icon && (
-										<span
-											className="et-pb-icon et-pb-font-icon"
-											dangerouslySetInnerHTML={{ __html: item.icon.split("||")[0] }}
-											style={{ color: icon_color, fontSize: icon_font_size, height: icon_font_size, width: icon_font_size }}
-										/>
-									)
-								)}
-								{item.title}
-							</h3>
+							<div className='wpd-accordion-title-wrapper'>
+								<h3
+									className="wpd-accordion-title"
+									onClick={() => this.toggleAccordion(i)}
+									style={{color:title_color, fontSize: title_font_size}}
+								>
+									{item.image_icon === 'on' ? (
+										<img className="wpd-accordion-image" src={item.icon_image} alt={item.title} style={{height: icon_font_size, width: icon_font_size}} />
+									) : (
+										item.icon && (
+											<span
+												className="et-pb-icon et-pb-font-icon"
+												dangerouslySetInnerHTML={{ __html: item.icon.split("||")[0] }}
+												style={{ color: icon_color, fontSize: icon_font_size}}
+											/>
+										)
+									)}
+									<span style={{color:title_color, fontSize: title_font_size}}>{item.title}</span>
+								</h3>
+								<span className="et-pb-icon et-pb-font-icon wpd-open-close-icon">&#x35;</span>
+							</div>
 							<div className="wpd-accordion-description"
 								ref={el => this.contentRefs[i] = { current: el }}
 								style={{ 

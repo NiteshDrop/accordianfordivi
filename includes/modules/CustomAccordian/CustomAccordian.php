@@ -46,9 +46,9 @@ class Wpd_Custom_Accordian extends ET_Builder_Module {
 		$fields['title_font_size'] = array(
 			'label'            => esc_html__( 'Title Font Size', 'wca-customaccordian' ),
 			'type'             => 'range',
-			'default'          => '28px',
+			'default'          => '18px',
 			'default_unit'     => 'px',
-			'default_on_front' => '28px',
+			'default_on_front' => '18px',
 			'allowed_units'    => array( 'em', 'rem', 'px', 'pt' ),
 			'range_settings'   => array(
 				'min'  => '1',
@@ -72,9 +72,9 @@ class Wpd_Custom_Accordian extends ET_Builder_Module {
 		$fields['icon_font_size'] = array(
 			'label'            => esc_html__( 'Icon Font Size', 'wca-customaccordian' ),
 			'type'             => 'range',
-			'default'          => '22px',
+			'default'          => '32px',
 			'default_unit'     => 'px',
-			'default_on_front' => '22px',
+			'default_on_front' => '32px',
 			'allowed_units'    => array( 'em', 'rem', 'px', 'pt' ),
 			'range_settings'   => array(
 				'min'  => '1',
@@ -126,9 +126,9 @@ class Wpd_Custom_Accordian extends ET_Builder_Module {
 		$fields['smalltext_font_size'] = array(
 			'label'            => esc_html__( 'Other Text Font Size', 'wca-customaccordian' ),
 			'type'             => 'range',
-			'default'          => '12px',
+			'default'          => '14px',
 			'default_unit'     => 'px',
-			'default_on_front' => '12px',
+			'default_on_front' => '14px',
 			'allowed_units'    => array( 'em', 'rem', 'px', 'pt' ),
 			'range_settings'   => array(
 				'min'  => '1',
@@ -187,7 +187,7 @@ class Wpd_Custom_Accordian extends ET_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .wpd-accordion-title',
+				'selector'    => '%%order_class%% .wpd-accordion-title *',
 				'declaration' => "color: {$title_color};",
 			)
 		);
@@ -195,7 +195,7 @@ class Wpd_Custom_Accordian extends ET_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .wpd-accordion-title',
+				'selector'    => '%%order_class%% .wpd-accordion-title *',
 				'declaration' => "font-size: {$title_font_size};",
 			)
 		);
@@ -211,7 +211,7 @@ class Wpd_Custom_Accordian extends ET_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .wpd-accordion-title span',
+				'selector'    => '%%order_class%% .wpd-accordion-title span.et-pb-icon',
 				'declaration' => "
 					font-size: {$icon_font_size};
 				",

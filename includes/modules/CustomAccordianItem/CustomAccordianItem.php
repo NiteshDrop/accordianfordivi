@@ -12,7 +12,12 @@ class Wpd_Accordian_Item extends ET_Builder_Module {
 		$this->settings_modal_toggles = array(
 			'general'  => array(
 				'toggles' => array(
-					'content'         => esc_html__( 'Content', 'wca-customaccordian' ),
+					'title'         	=> esc_html__( 'Title', 'wca-customaccordian' ),
+					'icon'         		=> esc_html__( 'Icon', 'wca-customaccordian' ),
+					'image'         	=> esc_html__( 'Image', 'wca-customaccordian' ),
+					'description'   	=> esc_html__( 'Description', 'wca-customaccordian' ),
+					'othertext'     	=> esc_html__( 'Other Text', 'wca-customaccordian' ),
+					'button'       		=> esc_html__( 'Button', 'wca-customaccordian' ),
 				),
 			),
 		);
@@ -22,34 +27,38 @@ class Wpd_Accordian_Item extends ET_Builder_Module {
 		$fields = array();
 
 		$fields['accordian_title'] = array(
-			'label'					=> esc_html__( 'Accordian Title', 'wca-customaccordian' ),
-			'type'					=> 'text',
-			'description'		=> esc_html__('This is title for each accordian.','wca-customaccordian'),
+			'label'						=> esc_html__( 'Accordian Title', 'wca-customaccordian' ),
+			'type'						=> 'text',
+			'description'			=> esc_html__('This is title for each accordian.','wca-customaccordian'),
+			'toggle_slug'   	=> 'title',
 		);
 
 		$fields['accordian_content'] = array(
-			'label'					=> esc_html__( 'Accordian Content', 'wca-customaccordian' ),
-			'type'					=> 'tiny_mce',
-			'description'		=> esc_html__('This is contents for each accordian.','wca-customaccordian'),
+			'label'						=> esc_html__( 'Accordian Content', 'wca-customaccordian' ),
+			'type'						=> 'tiny_mce',
+			'description'			=> esc_html__('This is contents for each accordian.','wca-customaccordian'),
+			'toggle_slug'    	=> 'description',
 		);
 
 		$fields['image_icon'] = array(
-			'label'       => esc_html__( 'Image Icon', 'wca-customaccordian' ),
-			'type'        => 'yes_no_button',
-			'options'     => array(
+			'label'       	=> esc_html__( 'Image Icon', 'wca-customaccordian' ),
+			'type'        	=> 'yes_no_button',
+			'options'     	=> array(
 				'off' => esc_html__( 'No', 'wca-customaccordian' ),
 				'on'  => esc_html__( 'Yes', 'wca-customaccordian' ),
 			),
-			'default'     => 'off',
+			'default'     	=> 'off',
+			'toggle_slug'   => 'icon',
 		);
 
 		$fields['accordion_icon'] = array(
-			'label'       => esc_html__( 'Icon', 'wca-customaccordian' ),
-			'type'        => 'select_icon',
-			'class'       => array( 'et-pb-icon et-pb-font-icon' ),
-			'show_if'          => array(
+			'label'       	=> esc_html__( 'Icon', 'wca-customaccordian' ),
+			'type'        	=> 'select_icon',
+			'class'       	=> array( 'et-pb-icon et-pb-font-icon' ),
+			'show_if'       => array(
 				'image_icon' => 'off',
 			),
+			'toggle_slug'   => 'icon',
 		);
 
 		$fields['accordion_icon_image'] = array(
@@ -66,6 +75,7 @@ class Wpd_Accordian_Item extends ET_Builder_Module {
 			'show_if'          => array(
 				'image_icon' => 'on',
 			),
+			'toggle_slug'    => 'icon',
 		);
 
 		$fields['accordion_image'] = array(
@@ -79,6 +89,7 @@ class Wpd_Accordian_Item extends ET_Builder_Module {
 				'alt',
 				'title_text',
 			),
+			'toggle_slug'    => 'image',
 		);
 
 		$fields['show_small_text'] = array(
@@ -88,6 +99,7 @@ class Wpd_Accordian_Item extends ET_Builder_Module {
 				'off' => esc_html__( 'No', 'wca-customaccordian' ),
 				'on'  => esc_html__( 'Yes', 'wca-customaccordian' ),
 			),
+			'toggle_slug'    => 'othertext',
 		);
 
 		$fields['accordian_small_text'] = array(
@@ -97,6 +109,7 @@ class Wpd_Accordian_Item extends ET_Builder_Module {
 			'show_if'          => array(
 				'show_small_text' => 'on',
 			),
+			'toggle_slug'    => 'othertext',
 		);
 
 		$fields['show_accordian_link'] = array(
@@ -106,6 +119,7 @@ class Wpd_Accordian_Item extends ET_Builder_Module {
 				'off' => esc_html__( 'No', 'wca-customaccordian' ),
 				'on'  => esc_html__( 'Yes', 'wca-customaccordian' ),
 			),
+			'toggle_slug'    => 'button',
 		);
 
 		$fields['accordian_link_text'] = array(
@@ -115,6 +129,7 @@ class Wpd_Accordian_Item extends ET_Builder_Module {
 			'show_if'          => array(
 				'show_accordian_link' => 'on',
 			),
+			'toggle_slug'    => 'button',
 		);
 
 		$fields['accordian_link'] = array(
@@ -124,6 +139,7 @@ class Wpd_Accordian_Item extends ET_Builder_Module {
 			'show_if'          => array(
 				'show_accordian_link' => 'on',
 			),
+			'toggle_slug'    => 'button',
 		);
 
 		$fields['accordion_link_icon'] = array(
@@ -133,6 +149,7 @@ class Wpd_Accordian_Item extends ET_Builder_Module {
 			'show_if'          => array(
 				'show_accordian_link' => 'on',
 			),
+			'toggle_slug'    => 'button',
 		);
 
 		return $fields;
@@ -145,6 +162,8 @@ class Wpd_Accordian_Item extends ET_Builder_Module {
 		$accordion_icon = isset($this->props['accordion_icon']) ? et_pb_process_font_icon($this->props['accordion_icon']) : '';
 		$accordion_link_icon = isset($this->props['accordion_link_icon']) ? et_pb_process_font_icon($this->props['accordion_link_icon']) : '';
 		$icon_image = esc_url($this->props['accordion_icon_image']);
+
+		$accordion_open_close_icon = 
 
 		// Process image - safely handle the image URL
 		$accordion_image = '';
@@ -168,9 +187,12 @@ class Wpd_Accordian_Item extends ET_Builder_Module {
 
 		$output = sprintf(
 			'<div class="wpd_accordian_contents">
-				<h3 class="wpd-accordion-title">
-					%1$s%2$s
-				</h3>
+				<div class="wpd-accordion-title-wrapper">
+					<h3 class="wpd-accordion-title">
+						%1$s<span>%2$s</span>
+					</h3>
+					<span class="et-pb-icon et-pb-font-icon wpd-open-close-icon">&#x35;</span>
+				</div>
 				<div class="wpd-accordion-description">
 					%3$s
 					<span class="wpd-small-text">%4$s</span>
@@ -184,6 +206,7 @@ class Wpd_Accordian_Item extends ET_Builder_Module {
 			',
 			($accordion_icon_image == "on") ? '<img src="'.$icon_image.'" />' : sprintf('<span class="et-pb-icon et-pb-font-icon wpd-readmore-icon">%1$s</span>', $accordion_icon),
 			$accordion_title,
+			
 			$accordion_content,
 			$accordian_small_text,
 			($accordion_link_text) ? sprintf('<a class="wpd-accordion-button" href="%1$s"> %2$s <span class="et-pb-icon et-pb-font-icon wpd-readmore-icon">%3$s</span></a>', $accordion_link, $accordion_link_text,$accordion_link_icon ) : "",
